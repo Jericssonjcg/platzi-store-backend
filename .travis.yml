@@ -1,0 +1,26 @@
+language: node_js
+cache:
+  directories:
+    - node_modules
+    - ~/.npm
+node_js:
+  - '12'
+git:
+  depth: 3
+script:
+  - yarn test
+notifications:
+  slack: codetechnews:qw2lmvG5X7womOB40DCgXtj4
+  email:
+    recipients:
+      - jericssonjcg@gmail.com
+    on_success: always
+    on_failure: always
+deploy:
+  provider: heroku
+  skip-cleanup: true
+  keep-history: true
+  api_key: 2f21c580-a303-4ab0-aaa3-1cd207543e4a
+  app: platzi-store-backend1987
+  on:
+    repo: Jericssonjcg/platzi-store-backend
